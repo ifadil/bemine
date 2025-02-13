@@ -97,7 +97,8 @@
         <h1>Love you baby girl, I'll be there soon shimmu! 💖</h1>
         <p>You mean the world to me, and I couldn’t imagine life without you meri jaan.</p>
 
-        <audio controls autoplay>
+        <!-- Updated Audio Tag -->
+        <audio id="song">
             <source src="Ed Sheeran - Perfect.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -107,6 +108,10 @@
         function showPage2() {
             document.getElementById('page-1').style.display = 'none';
             document.getElementById('page-2').style.display = 'block';
+
+            // Play the song when page 2 is displayed
+            const song = document.getElementById('song');
+            song.play();
         }
 
         function noAnswer(button) {
