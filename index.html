@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        img, video {
+            max-width: 90%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .button-container {
+            margin: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .yes-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .yes-btn:hover {
+            background-color: #e63939;
+        }
+        .no-btn {
+            background-color: #f2f2f2;
+            color: #333;
+            position: relative;
+        }
+        .no-btn:hover {
+            background-color: #ffcccc;
+        }
+        .jump {
+            position: absolute;
+            animation: jump 0.3s ease;
+        }
+        @keyframes jump {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Question Page -->
+    <div id="page-1">
+        <h1>Will You Be My Valentine? ❤️</h1>
+
+        <video width="600" height="400" controls>
+            <source src="WhatsApp Video 2025-02-14 at 2.41.38 AM.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="button-container">
+            <button class="yes-btn" onclick="showPage2()">Yes</button>
+            <button class="no-btn" onclick="noAnswer(this)">No</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Response Page -->
+    <div id="page-2" style="display: none;">
+        <video width="600" height="400" controls autoplay>
+            <source src="Copy of Simran birthday.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <h1>Thank you, Simran! 💖</h1>
+        <p>You mean the world to me, and I couldn’t imagine life without you.</p>
+
+        <audio controls autoplay>
+            <source src="Ed Sheeran - Perfect.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        function showPage2() {
+            document.getElementById('page-1').style.display = 'none';
+            document.getElementById('page-2').style.display = 'block';
+        }
+
+        function noAnswer(button) {
+            button.classList.add('jump');
+            setTimeout(() => {
+                button.classList.remove('jump');
+                button.style.left = Math.random() * 300 - 150 + 'px'; // Move randomly
+                button.style.top = Math.random() * 200 - 100 + 'px';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
